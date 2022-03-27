@@ -12,6 +12,9 @@ export class Clothes {
   name: string;
 
   @Prop()
+  brand: string;
+
+  @Prop()
   price: number;
 
   @Prop()
