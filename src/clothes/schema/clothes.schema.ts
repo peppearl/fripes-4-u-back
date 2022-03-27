@@ -15,10 +15,16 @@ export class Clothes {
   price: number;
 
   @Prop()
-  quantity: number;
+  description: string;
 
   @Prop()
-  description: string;
+  category: string;
+
+  @Prop()
+  condition: string;
+
+  @Prop()
+  color: string;
 }
 
 export const ClothesSchema = SchemaFactory.createForClass(Clothes);
