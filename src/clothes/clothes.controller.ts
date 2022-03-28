@@ -31,6 +31,21 @@ export class ClothesController {
     return this.clothesService.findOne(id);
   }
 
+  @Get(':category')
+  async findByCategory(@Param('category') cat): Promise<Clothes[]> {
+    return this.clothesService.findByCategory(cat);
+  }
+
+  @Get(':brand')
+  async findByBrand(@Param('brand') brand): Promise<Clothes[]> {
+    return this.clothesService.findByBrand(brand);
+  }
+
+  @Get(':condition')
+  async findByCondition(@Param('condition') state): Promise<Clothes[]> {
+    return this.clothesService.findByCondition(state);
+  }
+
   @Delete(':id')
   remove(@Param('id') id) {
     return this.clothesService.delete(id);

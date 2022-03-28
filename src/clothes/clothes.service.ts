@@ -26,6 +26,18 @@ export class ClothesService {
     return this.clothesModel.findOne({ _id: id }).exec();
   }
 
+  async findByCategory(cat: string): Promise<Clothes[]> {
+    return this.clothesModel.find({ category: cat }).exec();
+  }
+
+  async findByBrand(brand: string): Promise<Clothes[]> {
+    return this.clothesModel.find({ brand: brand }).exec();
+  }
+
+  async findByCondition(state: string): Promise<Clothes[]> {
+    return this.clothesModel.find({ condition: state }).exec();
+  }
+
   async delete(id: string) {
     const deletedClothes = await this.clothesModel
       .findByIdAndRemove({ _id: id })
