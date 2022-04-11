@@ -3,6 +3,8 @@ import { UsersService } from './users.service';
 import { User } from './schema/users.schema';
 import { CreateUserDto } from './dto/users.dto';
 import { Public } from '../public.decorator';
+import { Roles } from '../roles.decorator';
+import { Role } from '../role.enum';
 
 @Controller('users')
 export class UsersController {
@@ -14,6 +16,7 @@ export class UsersController {
     await this.userService.create(createUserDto);
   }
 
+  @Roles(Role.Admin)
   @Get()
   async getAll(): Promise<User[]> {
     return this.userService.findAll();
