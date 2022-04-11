@@ -22,11 +22,13 @@ export class ClothesController {
     await this.clothesService.create(createClothesDto);
   }
 
+  @Public()
   @Get()
   async getAll(): Promise<Clothes[]> {
     return this.clothesService.findAll();
   }
 
+  @Public()
   @Get(':id')
   async findOne(@Param('id') id): Promise<Clothes> {
     return this.clothesService.findOne(id);
