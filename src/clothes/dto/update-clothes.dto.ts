@@ -6,4 +6,5 @@ export type UpdateClothesDto = {
   category: string;
   condition: string;
   color: string;
+  image: string;
 };

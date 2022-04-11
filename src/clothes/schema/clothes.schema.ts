@@ -28,6 +28,9 @@ export class Clothes {
 
   @Prop()
   color: string;
+
+  @Prop()
+  image: string;
 }
 
 export const ClothesSchema = SchemaFactory.createForClass(Clothes);

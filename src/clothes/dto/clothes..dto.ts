@@ -6,4 +6,5 @@ export type CreateClothesDto = {
   category: string;
   condition: string;
   color: string;
+  image: string;
 };
