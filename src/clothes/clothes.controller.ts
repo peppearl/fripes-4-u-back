@@ -11,6 +11,7 @@ import { ClothesService } from './clothes.service';
 import { CreateClothesDto } from './dto/clothes..dto';
 import { UpdateClothesDto } from './dto/update-clothes.dto';
 import { Clothes } from './schema/clothes.schema';
+import { Public } from '../public.decorator';
 
 @Controller('clothes')
 export class ClothesController {
@@ -31,16 +32,19 @@ export class ClothesController {
     return this.clothesService.findOne(id);
   }
 
+  @Public()
   @Get(':category')
   async findByCategory(@Param('category') cat): Promise<Clothes[]> {
     return this.clothesService.findByCategory(cat);
   }
 
+  @Public()
   @Get(':brand')
   async findByBrand(@Param('brand') brand): Promise<Clothes[]> {
     return this.clothesService.findByBrand(brand);
   }
 
+  @Public()
   @Get(':condition')
   async findByCondition(@Param('condition') state): Promise<Clothes[]> {
     return this.clothesService.findByCondition(state);
