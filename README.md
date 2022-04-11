@@ -35,6 +35,10 @@ $ yarn install
 ## Running the app
 
 ```bash
+# BDD
+
+$ docker-compose up
+
 # development
 $ yarn start
 
