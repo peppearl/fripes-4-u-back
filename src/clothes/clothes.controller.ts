@@ -33,19 +33,19 @@ export class ClothesController {
   }
 
   @Public()
-  @Get(':category')
+  @Get('collections/:category')
   async findByCategory(@Param('category') cat): Promise<Clothes[]> {
     return this.clothesService.findByCategory(cat);
   }
 
   @Public()
-  @Get(':brand')
+  @Get('brands/:brand')
   async findByBrand(@Param('brand') brand): Promise<Clothes[]> {
     return this.clothesService.findByBrand(brand);
   }
 
   @Public()
-  @Get(':condition')
+  @Get('conditon/:condition')
   async findByCondition(@Param('condition') state): Promise<Clothes[]> {
     return this.clothesService.findByCondition(state);
   }
